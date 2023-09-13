@@ -34,10 +34,8 @@ let result2 = arr.map((n:any) =>  isNaN(n));
 console.log(result2)
 
 // Tuple
-
 let user: [string , number] = ["anne", 9];
-
-
+// tuples are the array which we need ot specify to the fixed array length!
 user.push("test");
 console.log(user);
 
