@@ -34,11 +34,20 @@ let result2 = arr.map((n:any) =>  isNaN(n));
 console.log(result2)
 
 // Tuple
-
 let user: [string , number] = ["anne", 9];
+// tuples are the array which we need ot specify to the fixed array length!
 
 
-user.push("test");
-console.log(user);
+// Enums
+const small = 1;
+const medium = 2;
+const large = 3;
+// instead of writing th same same const repeatedly like above code we can go head with the typeScript types enums
+
+// We have to create the enums with the (enum) key value and PascalCase
+enum Size { Small = "tight", Medium = "fit", Large= "slack" };
+// these are basically like Objects. however the difference is if you dont key the value for the enum it will take default as 0 (index)
+let mySize = Size.Large;
+console.log(mySize)
 
  

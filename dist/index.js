@@ -29,6 +29,19 @@ let result2 = arr.map((n) => isNaN(n));
 console.log(result2);
 // Tuple
 let user = ["anne", 9];
-user.push("test");
-console.log(user);
+// tuples are the array which we need ot specify to the fixed array length!
+// Enums
+const small = 1;
+const medium = 2;
+const large = 3;
+// We have to create the enums with the (enum) key value and PascalCase
+var Size;
+(function (Size) {
+    Size["Small"] = "tight";
+    Size["Medium"] = "fit";
+    Size["Large"] = "slack";
+})(Size || (Size = {}));
+;
+let mySize = Size.Medium;
+console.log(mySize);
 //# sourceMappingURL=index.js.map
