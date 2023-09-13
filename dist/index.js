@@ -34,6 +34,7 @@ let user = ["anne", 9];
 const small = 1;
 const medium = 2;
 const large = 3;
+// instead of writing th same same const repeatedly like above code we can go head with the typeScript types enums
 // We have to create the enums with the (enum) key value and PascalCase
 var Size;
 (function (Size) {
@@ -42,6 +43,12 @@ var Size;
     Size["Large"] = "slack";
 })(Size || (Size = {}));
 ;
-let mySize = Size.Medium;
+// these are basically like Objects. however the difference is if you don't key the value for the enum it will take default as 0 (index)
+let mySize = Size.Large;
 console.log(mySize);
+// Functions
+const add = (a, b) => {
+    return a + b + "";
+};
+console.log(add(9, 9));
 //# sourceMappingURL=index.js.map
