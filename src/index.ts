@@ -25,7 +25,7 @@ testFn(" Hello World"); // Here as a string
 let arr = [1, 2, "3"];
 let arr2 = [1, 2, 3];
 let arr3: number[] = [12, 3, 34, 46];
-let result = arr3.map((n, i) => n.toString);
+let result = arr3.map(n => n.toString);
 // So basically as your using arr3:number[] when you map over this arr. when you want to using any methods of js it will automatically suggests all the number methods instead of any other datatypes methods
 console.log(result);
 
@@ -54,16 +54,42 @@ let mySize = Size.Large;
 console.log(mySize);
 
 // Functions
-const calculateTax = (income: number, taxPercentageL = "test"): number => {
-  let result;
-  if (income < 300) return 2 * income;
-  result = income + taxPercentageL;
-  return income + 0;
-};
-
-calculateTax(2);
-
 // Notes on functions:
 // 1, We have to explicitly give annotate the parameters and functions if not it will throw and error;
 // 2, if we not sure of give the second parameter then we can use "?" after the parameter eg: (income: number, percentage? :number) or we can either use default parameter!
 // 3, we have different rules to turn off and on ion the tsconfig.json file like noUnusedLocals, noUsedParameters and noImplicitReturns.
+const calculateTax = (income: number, taxPercentageL = 5): number => {
+  let result;
+  result = income + taxPercentageL;
+  if (income < 300) return 2 + result;
+  return income + 0;
+};
+calculateTax(2);
+
+// objects
+// Notes: 
+// 1, Objects also expect type notations before initialization
+// 2, if you want the property to be used only once then you should use the readonly before the type notation property
+// 3, if your not sure of initialization the property then you can use "?"
+// 4, to declare functions you have to give the type notation for the functions and parameters o the function!  
+const users: {
+  name: string;
+  readonly age: number;
+  isDone: boolean;
+  address?: object;
+  test? :boolean;
+  add? : ( a: number) => void
+} = {
+  name: "John",
+  isDone: false,
+  age: 89,
+  address: {
+    roadNumber: 123,
+    streetName: "John Street",
+    add: (a: number) => {
+        console.log(a);
+    }
+  },
+};
+// users.age = 10;
+// users.address.roadNumber = "Test road"
