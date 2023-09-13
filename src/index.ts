@@ -32,4 +32,13 @@ console.log(result)
 let result2 = arr.map((n:any) =>  isNaN(n));
 
 console.log(result2)
+
+// Tuple
+
+let user: [string , number] = ["anne", 9];
+
+
+user.push("test");
+console.log(user);
+
  
