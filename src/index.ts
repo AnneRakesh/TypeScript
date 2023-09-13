@@ -55,15 +55,15 @@ console.log(mySize);
 
 // Functions
 const calculateTax = (income: number, taxPercentageL = "test"): number => {
- let result;
-    if (income < 300) return 2 * income;
-    result = (income + taxPercentageL )
-  return income +0  
+  let result;
+  if (income < 300) return 2 * income;
+  result = income + taxPercentageL;
+  return income + 0;
 };
 
 calculateTax(2);
 
-// Notes on functions: 
+// Notes on functions:
 // 1, We have to explicitly give annotate the parameters and functions if not it will throw and error;
 // 2, if we not sure of give the second parameter then we can use "?" after the parameter eg: (income: number, percentage? :number) or we can either use default parameter!
-// 3, we have different rules to turn off and on ion the tsconfig.json file like noUnusedLocals, noUsedParameters,  
+// 3, we have different rules to turn off and on ion the tsconfig.json file like noUnusedLocals, noUsedParameters and noImplicitReturns.
