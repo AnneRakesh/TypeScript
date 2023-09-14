@@ -148,6 +148,12 @@ greet(null); // null param will not be accepted because we have strickNullCheck 
 const getDOB = (id) => {
     return id === 0 ? null : { birthDay: new Date() };
 };
-let resultForDOB = getDOB(0);
+let resultForDOB = getDOB(1);
+// Chaining Example Below
+// Optional property access Operator -
 console.log((_a = resultForDOB === null || resultForDOB === void 0 ? void 0 : resultForDOB.birthDay) === null || _a === void 0 ? void 0 : _a.getFullYear());
+// Optional Element Access Operator
+// if customer is an Array
+let OptionalArr = [1, 2, 3, 4, [1, 5, 8, 9]];
+console.log(OptionalArr[5]);
 //# sourceMappingURL=index.js.map
