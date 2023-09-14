@@ -25,7 +25,7 @@ testFn(" Hello World"); // Here as a string
 let arr = [1, 2, "3"];
 let arr2 = [1, 2, 3];
 let arr3: number[] = [12, 3, 34, 46];
-let result = arr3.map(n => n.toString);
+let result = arr3.map((n) => n.toString);
 // So basically as your using arr3:number[] when you map over this arr. when you want to using any methods of js it will automatically suggests all the number methods instead of any other datatypes methods
 console.log(result);
 
@@ -67,18 +67,18 @@ const calculateTax = (income: number, taxPercentageL = 5): number => {
 calculateTax(2);
 
 // objects
-// Notes: 
+// Notes:
 // 1, Objects also expect type notations before initialization
 // 2, if you want the property to be used only once then you should use the readonly before the type notation property
 // 3, if your not sure of initialization the property then you can use "?"
-// 4, to declare functions you have to give the type notation for the functions and parameters o the function!  
+// 4, to declare functions you have to give the type notation for the functions and parameters o the function!
 const users: {
   name: string;
   readonly age: number;
   isDone: boolean;
   address?: object;
-  test? :boolean;
-  add? : ( a: number) => void
+  test?: boolean;
+  add?: (a: number) => void;
 } = {
   name: "John",
   isDone: false,
@@ -87,9 +87,61 @@ const users: {
     roadNumber: 123,
     streetName: "John Street",
     add: (a: number) => {
-        console.log(a);
-    }
+      console.log(a);
+    },
   },
 };
 // users.age = 10;
-// users.address.roadNumber = "Test road"
+// users.address.roadNumber = "Test road" need to ask Hemanth on this!
+
+//_______________________________________________________
+
+// Advances Concepts of TypeScript
+// 1, Type Aliases
+// 2, Union and Intersections
+// 3, type Narrowing
+// 4, Nullable type
+// 5, the Unknown type
+// 6, The never type
+
+// 1, Type Aliases
+
+// Instead o creating type Annotations for each object we define if the object contains same annotations. then it will be a against rule of DRY Principle;
+// to achieve Dry. we have go ahead with type Aliases.
+// we have to use "type" keyword and PascalCase to declare the type annotation
+type Employee = {
+  readonly name: string;
+  age: number;
+  address: object;
+  testArray?: number[]; // need to ask how do we have mixture of all type Arrays Hemanth!
+  familyMembersNames?: (string | number)[];
+  getNames?: (a: number, b: string) => string;
+};
+
+const employee1: Employee = {
+  name: "John Peter",
+  age: 40,
+  address: {
+    Hno: 123,
+    street: "Colony Street",
+  },
+  getNames: (a: number, b: string) => {
+    return a + b;
+  },
+};
+
+const employee2: Employee = {
+  name: " VS Code",
+  age: 49,
+  address: {
+    Hno: 321,
+    street: "tStreet",
+  },
+  getNames: (a: number, b: string) => {
+    return a + b;
+  },
+};
+
+employee1.age = 100;
+// employee1.name =" Test"; Ts doesn't allow to compile due to which we have provided readonly to name annotate
+// employee1.address.Hno = 458;  need to ask Hemanth on this!
