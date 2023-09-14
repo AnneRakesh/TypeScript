@@ -161,3 +161,39 @@ const kgToLbs = (kg: string | number): number => {
   // else return kg // here in the else case it will prompt us all the string methods to us
   else return parseInt(kg) * 2 * 2;
 };
+
+// Intersection type
+// Notes: So in Union type we use the single pipe for type annotation one or more type can we  give to the variable right?
+// the same way here in intersection we have single & to give two tyre at once with "&" keyword
+
+let intersectionExample: number & string; // technically this is not possible because we cannot initialize the declare with two  string and number or any type at once in primitive types
+// example of intersection
+
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resizeFn: () => void;
+};
+
+type UiWidget = Draggable & Resizable;
+
+// So now we can combine these two functions at one place
+const testBox: UiWidget = {
+  drag: () => {},
+  resizeFn: () => {},
+};
+
+// Literal type
+// Notes: for instance if you want to limit a specified value of an type to the variable if you use this literal type
+
+let fixedSalary: number = 100; // this statement will take any valid number in the js correct? to achieve the same we have to use Union  type which will be defined by type
+type FixedSalary = 50 | 100; // I have used Union type declared by type
+// let AugustMonthSalary: FixedSalary = 6; // Here it will not accept 6
+let AugustMonthSalary: FixedSalary = 50; // here while initialization it will only accept 50 or 100;
+
+type Metric = "inches" | "cm";
+let tableHeight: Metric = "cm";
+
+
