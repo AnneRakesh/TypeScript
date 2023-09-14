@@ -196,4 +196,15 @@ let AugustMonthSalary: FixedSalary = 50; // here while initialization it will on
 type Metric = "inches" | "cm";
 let tableHeight: Metric = "cm";
 
+// Nullable types
+// So basically in JavaScript the major errors happen with null and undefined values only.
+// To prevent we have nullable value in tsconfig file "strictNullChecks" which is default true
+// Example
 
+function greet(userName: string | null): string { // here we're using union type neither it should null or string
+  if (userName) return "Hello " + userName + "!";
+  else return "hello User";
+}
+
+greet("John"); // This will accept because we have defined the type annotate as string
+greet(null); // null param will not be accepted because we have strickNullCheck true here so it wont let you compile, if it is off it would ignore this!
