@@ -201,7 +201,8 @@ let tableHeight: Metric = "cm";
 // To prevent we have nullable value in tsconfig file "strictNullChecks" which is default true
 // Example
 
-function greet(userName: string | null): string { // here we're using union type neither it should null or string
+function greet(userName: string | null): string {
+  // here we're using union type neither it should null or string
   if (userName) return "Hello " + userName + "!";
   else return "hello User";
 }
