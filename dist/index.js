@@ -11,9 +11,9 @@ test = "test";
 test = 20;
 // function testFn (array:string) {
 function testFn(array) {
-  // if you do not mention the type of the args it will not accept and not let you compile the function
-  // There are two ways to get rid of this error for compile 1, give annotate & 2, turn off the no implicitly return
-  console.log(array);
+    // if you do not mention the type of the args it will not accept and not let you compile the function
+    // There are two ways to get rid of this error for compile 1, give annotate & 2, turn off the no implicitly return
+    console.log(array);
 }
 // testFn("Test");
 testFn(45455545656); // as we have provided ":any annotate " it is accepting any data type
@@ -38,9 +38,9 @@ const large = 3;
 // We have to create the enums with the (enum) key value and PascalCase
 var Size;
 (function (Size) {
-  Size["Small"] = "tight";
-  Size["Medium"] = "fit";
-  Size["Large"] = "slack";
+    Size["Small"] = "tight";
+    Size["Medium"] = "fit";
+    Size["Large"] = "slack";
 })(Size || (Size = {}));
 // these are basically like Objects. however the difference is if you don't key the value for the enum it will take default as 0 (index)
 let mySize = Size.Large;
@@ -51,10 +51,11 @@ console.log(mySize);
 // 2, if we not sure of give the second parameter then we can use "?" after the parameter eg: (income: number, percentage? :number) or we can either use default parameter!
 // 3, we have different rules to turn off and on ion the tsconfig.json file like noUnusedLocals, noUsedParameters and noImplicitReturns.
 const calculateTax = (income, taxPercentageL = 5) => {
-  let result;
-  result = income + taxPercentageL;
-  if (income < 300) return 2 + result;
-  return income + 0;
+    let result;
+    result = income + taxPercentageL;
+    if (income < 300)
+        return 2 + result;
+    return income + 0;
 };
 calculateTax(2);
 // objects
@@ -64,38 +65,38 @@ calculateTax(2);
 // 3, if your not sure of initialization the property then you can use "?"
 // 4, to declare functions you have to give the type notation for the functions and parameters o the function!
 const users = {
-  name: "John",
-  isDone: false,
-  age: 89,
-  address: {
-    roadNumber: 123,
-    streetName: "John Street",
-    add: (a) => {
-      console.log(a);
+    name: "John",
+    isDone: false,
+    age: 89,
+    address: {
+        roadNumber: 123,
+        streetName: "John Street",
+        add: (a) => {
+            console.log(a);
+        },
     },
-  },
 };
 const employee1 = {
-  name: "John Peter",
-  age: 40,
-  address: {
-    Hno: 123,
-    street: "Colony Street",
-  },
-  getNames: (a, b) => {
-    return a + b;
-  },
+    name: "John Peter",
+    age: 40,
+    address: {
+        Hno: 123,
+        street: "Colony Street",
+    },
+    getNames: (a, b) => {
+        return a + b;
+    },
 };
 const employee2 = {
-  name: " VS Code",
-  age: 49,
-  address: {
-    Hno: 321,
-    street: "tStreet",
-  },
-  getNames: (a, b) => {
-    return a + b;
-  },
+    name: " VS Code",
+    age: 49,
+    address: {
+        Hno: 321,
+        street: "tStreet",
+    },
+    getNames: (a, b) => {
+        return a + b;
+    },
 };
 employee1.age = 100;
 // employee1.name =" Test"; Ts doesn't allow to compile due to which we have provided readonly to name annotate
@@ -105,13 +106,23 @@ employee1.age = 100;
 // We can achieve this by given ( | ) symbol the same usage of || operator however in union type
 // here in the below 154 line i have used | (union type  number or string)
 const kgToLbs = (kg) => {
-  // Before narrowing the type of the kg param if we try to use any inbuilt js methods by using kg. it wil only suggest the methods which are common to both string number
-  // to achieve the specific type we have to narrow the type first
-  // Narrowing the type
-  if (typeof kg === "number")
-    // here complier will understand is it number or string so now if we use kg. it will suggest us all the methods of number type
-    return kg * 2.2;
-  // else return kg // here in the else case it will prompt us all the string methods to us
-  else return parseInt(kg) * 2 * 2;
+    // Before narrowing the type of the kg param if we try to use any inbuilt js methods by using kg. it wil only suggest the methods which are common to both string number
+    // to achieve the specific type we have to narrow the type first
+    // Narrowing the type
+    if (typeof kg === "number")
+        // here complier will understand is it number or string so now if we use kg. it will suggest us all the methods of number type
+        return kg * 2.2;
+    // else return kg // here in the else case it will prompt us all the string methods to us
+    else
+        return parseInt(kg) * 2 * 2;
+};
+// Intersection type
+// Notes: So in Union type we use the single pipe for type annotation one or more type can we  give to the variable right?
+// the same way here in intersection we have single & to give two tyre at once with "&" keyword
+let intersectionExample; // technically this is not possible because we cannot initialize the declare with two  string and number or any type at once in primitive types
+// So now we can combine these two functions at one place
+const testBox = {
+    drag: () => { },
+    resizeFn: () => { },
 };
 //# sourceMappingURL=index.js.map

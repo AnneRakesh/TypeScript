@@ -161,3 +161,26 @@ const kgToLbs = (kg: string | number): number => {
   // else return kg // here in the else case it will prompt us all the string methods to us
   else return parseInt(kg) * 2 * 2;
 };
+
+// Intersection type
+// Notes: So in Union type we use the single pipe for type annotation one or more type can we  give to the variable right?
+// the same way here in intersection we have single & to give two tyre at once with "&" keyword
+
+let intersectionExample: number & string; // technically this is not possible because we cannot initialize the declare with two  string and number or any type at once in primitive types
+// example of intersection
+
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resizeFn: () => void;
+};
+
+type UiWidget = Draggable & Resizable;
+
+// So now we can combine these two functions at one place
+const testBox: UiWidget = {
+  drag: () => {},
+  resizeFn: () => {},
+};
