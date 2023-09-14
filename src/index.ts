@@ -209,3 +209,16 @@ function greet(userName: string | null): string {
 
 greet("John"); // This will accept because we have defined the type annotate as string
 greet(null); // null param will not be accepted because we have strickNullCheck true here so it wont let you compile, if it is off it would ignore this!
+
+// Optional Chaining
+
+// Notes: it all refers to object if the property is available in the object the only go ahead with the next operation. kinda oa conditional
+type Celebration = {
+  birthDay?: Date;
+};
+
+const getDOB = (id: number): Celebration | null | undefined => {
+  return id === 0 ? null : { birthDay: new Date() };
+};
+let resultForDOB = getDOB(0);
+console.log(resultForDOB?.birthDay?.getFullYear());

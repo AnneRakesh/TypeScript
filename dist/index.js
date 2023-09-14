@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 let age = 21;
 let userName = "Anne Rages";
 let isDone = false;
@@ -131,4 +132,22 @@ let fixedSalary = 100; // this statement will take any valid number in the js co
 // let AugustMonthSalary: FixedSalary = 6; // Here it will not accept 6
 let AugustMonthSalary = 50; // here while initialization it will only accept 50 or 100;
 let tableHeight = "cm";
+// Nullable types
+// So basically in JavaScript the major errors happen with null and undefined values only.
+// To prevent we have nullable value in tsconfig file "strictNullChecks" which is default true
+// Example
+function greet(userName) {
+    // here we're using union type neither it should null or string
+    if (userName)
+        return "Hello " + userName + "!";
+    else
+        return "hello User";
+}
+greet("John"); // This will accept because we have defined the type annotate as string
+greet(null); // null param will not be accepted because we have strickNullCheck true here so it wont let you compile, if it is off it would ignore this!
+const getDOB = (id) => {
+    return id === 0 ? null : { birthDay: new Date() };
+};
+let resultForDOB = getDOB(0);
+console.log((_a = resultForDOB === null || resultForDOB === void 0 ? void 0 : resultForDOB.birthDay) === null || _a === void 0 ? void 0 : _a.getFullYear());
 //# sourceMappingURL=index.js.map
