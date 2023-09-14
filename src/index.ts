@@ -5,7 +5,7 @@ let isDone = false;
 let isDualDone: boolean = true;
 isDone = isDualDone;
 
-// Any Type exmaples
+// Any Type examples
 let test;
 test = "test";
 test = 20;
@@ -230,5 +230,4 @@ console.log(resultForDOB?.birthDay?.getFullYear());
 // if customer is an Array
 
 let OptionalArr = [1, 2, 3, 4, [1, 5, 8, 9]];
-
 console.log(OptionalArr?.[5]);
