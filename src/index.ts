@@ -145,3 +145,19 @@ const employee2: Employee = {
 employee1.age = 100;
 // employee1.name =" Test"; Ts doesn't allow to compile due to which we have provided readonly to name annotate
 // employee1.address.Hno = 458;  need to ask Hemanth on this!
+
+// Union Type;
+// We have give one or more type annotations for a variable or function parameter;
+// We can achieve this by given ( | ) symbol the same usage of || operator however in union type
+
+// here in the below 154 line i have used | (union type  number or string)
+const kgToLbs = (kg: string | number): number => {
+  // Before narrowing the type of the kg param if we try to use any inbuilt js methods by using kg. it wil only suggest the methods which are common to both string number
+  // to achieve the specific type we have to narrow the type first
+  // Narrowing the type
+  if (typeof kg === "number")
+    // here complier will understand is it number or string so now if we use kg. it will suggest us all the methods of number type
+    return kg * 2.2;
+  // else return kg // here in the else case it will prompt us all the string methods to us
+  else return parseInt(kg) * 2 * 2;
+};
