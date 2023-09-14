@@ -221,4 +221,6 @@ const getDOB = (id: number): Celebration | null | undefined => {
   return id === 0 ? null : { birthDay: new Date() };
 };
 let resultForDOB = getDOB(0);
+
+// Optional Chaining Example Below
 console.log(resultForDOB?.birthDay?.getFullYear());
