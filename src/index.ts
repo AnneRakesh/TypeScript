@@ -188,13 +188,12 @@ const testBox: UiWidget = {
 // Literal type
 // Notes: for instance if you want to limit a specified value of an type to the variable if you use this literal type
 
-let fixedSalary : number = 100; // this statement will take any valid number in the js correct? to achieve the same we have to use Union  type which will be defined by type
-
+let fixedSalary: number = 100; // this statement will take any valid number in the js correct? to achieve the same we have to use Union  type which will be defined by type
 type FixedSalary = 50 | 100; // I have used Union type declared by type
-
 // let AugustMonthSalary: FixedSalary = 6; // Here it will not accept 6
 let AugustMonthSalary: FixedSalary = 50; // here while initialization it will only accept 50 or 100;
 
 type Metric = "inches" | "cm";
+let tableHeight: Metric = "cm";
 
-let tableHeight: Metric = "cm"
+

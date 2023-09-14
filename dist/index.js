@@ -125,4 +125,10 @@ const testBox = {
     drag: () => { },
     resizeFn: () => { },
 };
+// Literal type
+// Notes: for instance if you want to limit a specified value of an type to the variable if you use this literal type
+let fixedSalary = 100; // this statement will take any valid number in the js correct? to achieve the same we have to use Union  type which will be defined by type
+// let AugustMonthSalary: FixedSalary = 6; // Here it will not accept 6
+let AugustMonthSalary = 50; // here while initialization it will only accept 50 or 100;
+let tableHeight = "cm";
 //# sourceMappingURL=index.js.map
