@@ -220,7 +220,15 @@ type Celebration = {
 const getDOB = (id: number): Celebration | null | undefined => {
   return id === 0 ? null : { birthDay: new Date() };
 };
-let resultForDOB = getDOB(0);
+let resultForDOB = getDOB(1);
 
-// Optional Chaining Example Below
+// Chaining Example Below
+// Optional property access Operator -
 console.log(resultForDOB?.birthDay?.getFullYear());
+
+// Optional Element Access Operator
+// if customer is an Array
+
+let OptionalArr = [1, 2, 3, 4, [1, 5, 8, 9]];
+
+console.log(OptionalArr?.[5]);
