@@ -6,7 +6,7 @@ let isDone = false;
 // isDone = "string"
 let isDualDone = true;
 isDone = isDualDone;
-// Any Type exmaples
+// Any Type examples
 let test;
 test = "test";
 test = 20;
@@ -155,5 +155,5 @@ console.log((_a = resultForDOB === null || resultForDOB === void 0 ? void 0 : re
 // Optional Element Access Operator
 // if customer is an Array
 let OptionalArr = [1, 2, 3, 4, [1, 5, 8, 9]];
-console.log(OptionalArr[5]);
+console.log(OptionalArr === null || OptionalArr === void 0 ? void 0 : OptionalArr[5]);
 //# sourceMappingURL=index.js.map
